@@ -1,0 +1,94 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="Stylesheet1.css">
+<title><center>Students Login</center></title>
+<script type="text/javascript">
+function namever(){
+			var x=document.form1.name.value;
+			var y=/^[a-zA-z]{9,10}$/;
+			if(!x.match(y))
+			document.getElementById("namemsg").innerHTML="max of 10 character min of 1";
+			else
+			document.getElementById("namemsg").innerHTML=" ";
+}
+function rollnum(){
+			var roll=document.form1.rollno.value;
+			var rollver=/^[0-9a-zA-Z]{6}$/;
+			if(!roll.match(rollver))
+			document.getElementById("namemsg1").innerHTML="max of 6 only";
+			else
+			document.getElementById("namemsg1").innerHTML=" ";
+}
+function vmail()
+{
+			var mailid=document.form1.mail.value;
+			var mailverify=/^[a-zA-z0-9\_\.\-]+\@[a-zA-z]+\.[a-zA-z]{2,3}$/;
+			if(!mailid.match(mailverify))
+			document.getElementById("namemsg2").innerHTML="mailId doesnt valid";
+			else
+			documnet.getElementById("namemsg2").innerHTML=" ";
+}
+function numberver()
+{
+  		var mobileId=document.form1.mobile.value;
+			var mobileverify=/^[0-9]{10}$/;
+			var len=mobileId.length;
+				if(len==10){
+					if(!mobileId.match(mobileverify))
+							document.getElementById("namemsg3").innerHTML="only 10 numbers requries";
+					else
+							document.getElementById("namemsg3"),innerHTML=" ";
+						}
+			else
+				doument.getElementById("namemsg3").innerHTML="Enter only 10 numbers";
+}
+function adress()
+{
+				var va=document.form1.addr.value;
+				var num=/^[a-zA-z0-9]$/;
+				if(!va.match(num))
+				document.getElementById("namemsg4").innerHTML="no special character should contain";
+				else
+				document.getElementById("namemsg4").innerHTML=" ";
+				}
+</script>
+</head>
+<body>
+						<h1>Students Login</h1>
+            <div align="center">
+						<form name="form1" onsubmit="return test()">
+						<table>
+							<tr>
+									<td><label for="name">Name</label></td>
+									<td><input type="text" name="name" autofocus onchange = "namever()" placeholder="Name" ></td>
+									<td><p id="namemsg"></p></td>
+							</tr>
+							<br>
+							<tr>
+									<td><label for="rollno">RollNO</label></td>
+									<td><input type="text" name="rollno" autofocus onchange = "rollnum()" placeholder="RollNO" ></td>
+									<td><p id="namemsg1"></p></td>
+							</tr>
+							<br>
+							<tr>
+									<td><label for="mail">MailID</label></td>
+									<td><input type="text" name="mail" autofocus onchange = "vmail()" placeholder="MailID" ></td>
+									<td><p id="namemsg2"></p></td>
+							</tr>
+							<tr>
+									<td><label for="mobile">Mobile Number</label></td>
+									<td><input type="text" name="mobile" autofocus onchange="numberver()" placeholder="Mobile Number"></td>
+									<td><p id="namemsg3"></p></td>
+							</tr>
+							<tr>
+									<td><label for="addr">Address</label></td>
+									<td><input type="text area" name="addr" autofocus onchange="adress()" placeholder="Address"></td>
+									<td><p id="namemsg4"></p></td>
+							</tr>
+							
+							<tr><td ><button type="submit" >Submit</button></td></tr>
+							</table>
+</div>
+
+</body>
+</html>
